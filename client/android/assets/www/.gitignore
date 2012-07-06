@@ -1,0 +1,9 @@
+# built application files
+app/*
+resources/*
+sdk/*
+app.js
+app.json
+index.html
+packager.json
+.senchasdk

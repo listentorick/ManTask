@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project name="ManTask" default="copyAssets">
+	<target name="copyAssets" description="Copies the www assets from the source directory into the android project">
+		
+		<delete includeemptydirs="true">  
+			<fileset dir="assets/www">  
+				<include name="**/*"/>
+				<exclude name="cordova-1.9.0.js" />
+			</fileset>
+		</delete>  
+
+		<copy todir="assets/www">
+			<fileset dir="../www"/>
+		</copy>
+	</target>
+</project>
