@@ -5,7 +5,7 @@ Ext.application({
         'Ext.MessageBox'
     ],
 
-    views: ['ChoresList', 'ChoresListContainer'],
+    views: ['ChoresList', 'ChoresListContainer', 'ChoreEditor'],
 	controllers: ['Chores'],
 	models: ['Chore'],
 	stores: ['Chores'],
@@ -34,8 +34,13 @@ Ext.application({
 		var choresListContainer = {
             xtype: "choreslistcontainer"
         };
-
+		
+		var choreEditor = {
+            xtype: "choreeditor"
+        };
+		
         Ext.Viewport.add(choresListContainer);
+		Ext.Viewport.add(choreEditor);
     },
 
     onUpdated: function() {
