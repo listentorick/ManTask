@@ -12,7 +12,9 @@ Ext.define("ManTask.view.ChoreEditor", {
         var backButton = {
             xtype: "button",
             ui: "back",
-            text: "Home"
+            text: "Home",
+			handler: this.onBackButtonTap,
+			scope: this
         };
 
         var saveButton = {
@@ -38,6 +40,7 @@ Ext.define("ManTask.view.ChoreEditor", {
             xtype: "button",
             iconCls: "trash",
             iconMask: true,
+			handler: this.onDeleteButtonTap,
             scope: this
         };
 
@@ -73,6 +76,14 @@ Ext.define("ManTask.view.ChoreEditor", {
 	
 	onSaveButtonTap: function () {
 		this.fireEvent("saveChoreCommand", this);
+	},
+	
+	onDeleteButtonTap: function() {
+		this.fireEvent("deleteChoreCommand", this);
+	},
+	
+	onBackButtonTap: function() {
+		this.fireEvent("backToHomeCommand", this);
 	}
 
 });

@@ -13,7 +13,9 @@ Ext.define("ManTask.controller.Chores", {
             },
 			choreEditor: {
 				// The commands fired by the chore editor.
-				saveChoreCommand: "onSaveChoreCommand"
+				saveChoreCommand: "onSaveChoreCommand",
+				deleteChoreCommand: "onDeleteChoreCommand",
+				backToHomeCommand: "onBackToHomeCommand"
 			}
 		}
 	},
@@ -79,6 +81,21 @@ Ext.define("ManTask.controller.Chores", {
 
 		choresStore.sort([{ property: 'dateCreated', direction: 'DESC'}]);
 
+		this.activateChoresList();
+	},
+	
+	onDeleteChoreCommand: function () {
+		var choreEditor = this.getChoreEditor();
+		var currentChore = choreEditor.getRecord();
+		var choresStore = Ext.getStore("Chores");
+
+		choresStore.remove(currentChore);
+		choresStore.sync();
+
+		this.activateChoresList();
+	},
+	
+	onBackToHomeCommand: function(){
 		this.activateChoresList();
 	},
 
