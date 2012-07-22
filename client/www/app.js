@@ -6,7 +6,7 @@ Ext.application({
     ],
 
     views: ['ChoresList', 'ChoresListContainer', 'ChoreEditor'],
-	controllers: ['Chores'],
+	controllers: ['Chores', 'Facebook'],
 	models: ['Chore'],
 	stores: ['Chores'],
     icon: {
@@ -28,19 +28,7 @@ Ext.application({
     },
 
     launch: function() {
-        // Destroy the #appLoadingIndicator element
-        Ext.fly('appLoadingIndicator').destroy();
-		
-		var choresListContainer = {
-            xtype: "choreslistcontainer"
-        };
-		
-		var choreEditor = {
-            xtype: "choreeditor"
-        };
-		
-        Ext.Viewport.add(choresListContainer);
-		Ext.Viewport.add(choreEditor);
+		ManTask.app.facebookAppId = "331199740299634";
     },
 
     onUpdated: function() {

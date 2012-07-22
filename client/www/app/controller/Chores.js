@@ -101,7 +101,7 @@ Ext.define("ManTask.controller.Chores", {
 
     launch: function () {
         this.callParent();
-		Ext.getStore("Chores").load();
+		
         console.log("launch");
     },
 	

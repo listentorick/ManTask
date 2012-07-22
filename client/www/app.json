@@ -38,6 +38,12 @@
         {
             "path": "sdk/sencha-touch-all.js"
         },
+		{
+			"path": "cdv-plugin-fb-connect.js"
+		},
+		{
+			"path": "facebook_js_sdk.js"
+		},
         {
             "path": "app.js",
             "bundle": true,  /* Indicates that all class dependencies are concatenated into this file when build */
